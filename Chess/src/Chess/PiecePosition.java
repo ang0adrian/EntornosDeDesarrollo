@@ -3,14 +3,23 @@ package Chess;
 public class PiecePosition {
 
 	/**
-	 * 
+	 *  Esta funcion nos debuelve "true " o "false" segun si el movimiento
+         * de la pieza es posible o no , concretamente nos dice la posicio que 
+         * hemos introducido esta o no dentro de nuestro tablero, de tal manera 
+         * que si ponemos una posicion duera de tablero dira "false" 
 	 */
 	public static boolean isAvailable(int column, int row) {
 		return column >= 0 && column < 8 && row >= 0 && row < 8;
 	}
 
 	/**
-	 * 
+	 * Esta Funcion es la encargada de mover la pieza de su ubicacion acrual
+         * a la siguiente , para ello recibe la posicion actual y la "X" y la "y"
+         * de la nueva posicion, si introducimos ina posicion que NO TENGA 
+         * PIEZAS no nos dejara mover , mientras que si es una posicion actual 
+         * valida lo que ara sera "Clonar" la pieza que esta en esa posicion 
+         * a la posicion indicada y despues borrar la pieza de su ubicacion 
+         * anterior
 	 */
 	static boolean isAvailable(PiecePosition position, int columnIncrement, int rowIncrement) {
 		if (position == null)

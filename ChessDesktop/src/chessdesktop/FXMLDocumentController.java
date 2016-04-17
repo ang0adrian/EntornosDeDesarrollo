@@ -24,6 +24,7 @@ public class FXMLDocumentController implements Initializable {
 	
 	ChessBoardRenderer board = new ChessBoardRenderer();
 
+        private boolean MoveWhite = true;
 	@FXML
 	private Label label;
 	@FXML
@@ -72,6 +73,7 @@ public class FXMLDocumentController implements Initializable {
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
 		
+            
 		board.draw(canvas);
 		
 		canvas.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent e)->{
@@ -81,10 +83,24 @@ public class FXMLDocumentController implements Initializable {
 				board.draw(canvas);
 				return;
 			}
+                        /*
+                            Aqui implemeto los turnos
+                        */
 			if (board.getMovingPiece() == null) {
-				board.setMovingPiece(piece);
-				board.draw(canvas);
-				return;
+                                if ((MoveWhite)&&(piece.getColor()==ChessPiece.Color.WHITE))
+                                {
+                                    board.setMovingPiece(piece);
+                                    board.draw(canvas);
+                                    MoveWhite=false;
+                                    return;
+                                }
+                                else if((!MoveWhite)&&(piece.getColor()==ChessPiece.Color.BLACK))
+                                {
+                                    board.setMovingPiece(piece);
+                                    board.draw(canvas);
+                                    MoveWhite=true;
+                                    return;
+                                }
 			}
 			if (board.movePieceTo(canvas, e.getX(), e.getY())) {
 				board.setMovingPiece(null);
