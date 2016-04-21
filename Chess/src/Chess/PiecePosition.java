@@ -42,7 +42,8 @@ public class PiecePosition {
 	private int column, row;
 
 	/**
-	 * 
+	 * Esta funcion es la que nos "Establece" los valores de posicion a las 
+         * piezas, recibiendo un Colomunna y una fila
 	 */
 	public PiecePosition(int column, int row) {
 		this.column = column;
@@ -50,14 +51,14 @@ public class PiecePosition {
 	}
 	
 	/**
-	 * 
+	 * Esta funcion nos devuelve la columna en la que esta una pieza
 	 */
 	public int getColumn() {
 		return column;
 	}
 
 	/**
-	 * 
+         * Esta funcion nos devuelve la fila en la que esta una pieza
 	 */
 	public int getRow() {
 		return row;
@@ -84,7 +85,8 @@ public class PiecePosition {
 	}
 	
 	/**
-	 * 
+	 * Esta funcion es la encargada de clonar las fichas cuando hacemos un 
+         * movimiento
 	 */
 	public PiecePosition clone() {
 		return new PiecePosition(column, row);

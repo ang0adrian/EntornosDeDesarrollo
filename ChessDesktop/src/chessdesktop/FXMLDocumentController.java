@@ -24,6 +24,8 @@ public class FXMLDocumentController implements Initializable {
 	
 	ChessBoardRenderer board = new ChessBoardRenderer();
 
+        private boolean Finish = false;
+        
         private boolean MoveWhite = true;
 	@FXML
 	private Label label;
@@ -91,25 +93,42 @@ public class FXMLDocumentController implements Initializable {
                                 {
                                     board.setMovingPiece(piece);
                                     board.draw(canvas);
-                                    MoveWhite=false;
+                                    //MoveWhite=false;
                                     return;
                                 }
                                 else if((!MoveWhite)&&(piece.getColor()==ChessPiece.Color.BLACK))
                                 {
                                     board.setMovingPiece(piece);
                                     board.draw(canvas);
-                                    MoveWhite=true;
+                                    //MoveWhite=true;
                                     return;
                                 }
 			}
 			if (board.movePieceTo(canvas, e.getX(), e.getY())) {
 				board.setMovingPiece(null);
 				board.draw(canvas);
+                                
+                                if (MoveWhite)
+                                {
+                                    MoveWhite=false;
+                                }
+                                else if(!MoveWhite)
+                                {
+                                    MoveWhite=true;
+                                }
+                                
 				if (!board.containsKing(ChessPiece.Color.BLACK) || !board.containsKing(ChessPiece.Color.WHITE)) {
 					if (!board.containsKing(ChessPiece.Color.BLACK))
-						label.setText("Ganan las blancas");
+                                        {
+                                            label.setText("Ganan las blancas");
+                                            Finish=true;
+                                            return;
+                                        }
 					else
-						label.setText("Ganan las negras");
+                                        {
+                                            label.setText("Ganan las negras");
+                                            return;
+                                        }
 				}
 			}
 		});

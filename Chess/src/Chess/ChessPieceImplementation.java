@@ -42,7 +42,6 @@ public class ChessPieceImplementation implements ChessPiece {
     public PiecePosition[] getAvailablePositions(ChessBoard aBoard) {
         switch (tipoPieza)
         {
-            
             case KING:
                 return getAvailablePositionsOfKing(this,aBoard);
             

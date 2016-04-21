@@ -80,7 +80,8 @@ public class ChessBoardRenderer {
 				drawTriangle(gc, minX + width * 0.3, minY + height * 0.2, width * 0.4, height * 0.8);
 				break;
 			case KNIGHT:
-				gc.fillOval(minX, minY, width, height);
+				drawTriangle(gc, minX + width * 0.5, minY -10 + height  * 0.2, width * 0.4, height * 0.8);
+                                gc.fillRect(minX, minY +7, width*0.75, height*0.75);
 				break;
 			case PAWN: 
 				drawTriangle(gc, minX, minY + height * 0.3, width, height * 0.7);
