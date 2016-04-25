@@ -115,7 +115,6 @@ public class FXMLDocumentController implements Initializable {
                                 
 				board.setMovingPiece(piece);
 				board.draw(canvas);
-                                board.ChangeColorAvailablePositions(canvas,piece.getAvailablePositions(board.getBoard()));
 				return;
                             }
                             
@@ -123,7 +122,6 @@ public class FXMLDocumentController implements Initializable {
                             {
 				board.setMovingPiece(piece);
 				board.draw(canvas);
-                                board.ChangeColorAvailablePositions(canvas,piece.getAvailablePositions(board.getBoard()));
 				return;
                             }
 			}

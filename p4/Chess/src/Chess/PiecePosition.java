@@ -15,7 +15,7 @@ public class PiecePosition {
 	}
 
 	/*
-            Esta Funcion comprueba si la posicion a la que vamos a mover esta libre de piezas,
+            Esta función comprueba si hay una pieza en la casilla que buscamos,
             si esta libre nos devolvera un boleano
         */
 	static boolean isAvailable(PiecePosition position, int columnIncrement, int rowIncrement) {
@@ -28,7 +28,7 @@ public class PiecePosition {
 	}
 
 	/**
-	 
+         * Esta función comprueba si hay una pieza de forma genérica
 	 */
 	static boolean isAvailable(PiecePosition position) {
 		if (position == null)

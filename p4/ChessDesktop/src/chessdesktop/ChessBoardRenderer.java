@@ -150,7 +150,9 @@ public class ChessBoardRenderer {
 						boardBounds.getMinX() + (i + 1) * width, boardBounds.getMinY() + (j + 1) * height);
 			}
 		}
-		
+		if (movingPiece != null)
+                       ChangeColorAvailablePositions(canvas,movingPiece.getAvailablePositions(getBoard()));
+                
 		for (ChessPiece piece : board.getPieces())
 			drawPiece(canvas, boardBounds, piece);
 
