@@ -19,11 +19,6 @@ public class MASCOTAS {
     HISTORIAL_MEDICO miHistorial_Medico
             = new HISTORIAL_MEDICO();
     
-     public MASCOTAS(String codigo)
-    {
-        CODIGO = codigo;
-    }
-    
     String CODIGO;
 
     String ALIAS;
