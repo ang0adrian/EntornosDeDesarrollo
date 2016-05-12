@@ -38,5 +38,5 @@ public class MASCOTAS {
 
     float PESO_MEDEIO_VISITAS;
 
-    int PESO_ACTUAL;
+    float PESO_ACTUAL;
 }
